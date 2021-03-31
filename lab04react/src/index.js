@@ -4,6 +4,7 @@ import Statistic from './components/Statistics ';
 
 const App = () => {
   // save clicks of each button to its own state
+  
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
@@ -25,7 +26,12 @@ const App = () => {
       <button onClick={BadClick}>bad</button>
       <div>
         <h1>Statictics</h1>
-        <Statistic good={good} neutral={neutral} bad={bad} />
+
+        {good===0 && neutral===0 && bad===0 ? (
+           <p>Nada wey</p>
+        ): (
+          <Statistic good={good} neutral={neutral} bad={bad} />
+        )}
       </div>
     </div>
   )
