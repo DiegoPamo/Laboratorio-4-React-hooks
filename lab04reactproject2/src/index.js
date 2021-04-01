@@ -17,7 +17,8 @@ const App = (props) => {
     setVotar(votar_anect)
   }
 
-
+  var almacen = [...voto]
+  let mayor = almacen.sort((a,b) => b.votar - a.votar)
 
   return (
     <div>
@@ -26,6 +27,7 @@ const App = (props) => {
       <button onClick={votacion}>Votar</button>
       <button onClick={aleatoria}>Siguiente</button>
       <p>Anecdota mas Votada</p>
+      <p>{mayor[0].anecdota} <b>con votos</b> {mayor[0].votar}</p>
     </div>
   )
 }
