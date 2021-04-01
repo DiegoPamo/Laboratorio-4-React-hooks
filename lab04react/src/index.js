@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Statistics from './components/Statistics ';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css'; 
 
 const App = () => {
   // save clicks of each button to its own state
@@ -19,18 +21,20 @@ const App = () => {
     setBad(bad + 1)
   }
   return (
-    <div>
-      <h1>give feedback</h1>
-      <button onClick={GoodClick}>good</button>
-      <button onClick={NeutralClick}>neutral</button>
-      <button onClick={BadClick}>bad</button>
-      <div>
-        <h1>Statictics</h1>
-        {good===0 && neutral===0 && bad===0 ? (
-           <p>Nada wey</p>
-        ): (
-          <Statistics good={good} neutral={neutral} bad={bad} />
-        )}
+    <div className="container">
+      <div className="card">
+        <h1>give feedback</h1>
+        <button className="btn btn-primary" onClick={GoodClick}>good</button>
+        <button className="btn btn-success" onClick={NeutralClick}>neutral</button>
+        <button className="btn btn-danger" onClick={BadClick}>bad</button>
+        <div>
+          <h2>Statictics</h2>
+          {good===0 && neutral===0 && bad===0 ? (
+            <p>Nada wey</p>
+          ): (
+            <Statistics good={good} neutral={neutral} bad={bad} />
+          )}
+        </div>
       </div>
     </div>
   )

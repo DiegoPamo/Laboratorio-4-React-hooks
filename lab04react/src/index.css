@@ -1,0 +1,14 @@
+#root{
+    align-items: center;
+    font: italic;
+}
+.card{
+    margin: 20em;
+    margin-top: 5em;
+}
+h1{
+    color: red;
+}
+h1,h2{
+    text-align: center;
+}
