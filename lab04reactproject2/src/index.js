@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css'; 
 
 const App = (props) => {
   const [selected, setSelected] = useState(0)
@@ -21,13 +23,18 @@ const App = (props) => {
   let mayor = almacen.sort((a,b) => b.votar - a.votar)
 
   return (
-    <div>
-      {voto[selected].anecdota}
-      <p>has {voto[selected].votar}</p>
-      <button onClick={votacion}>Votar</button>
-      <button onClick={aleatoria}>Siguiente</button>
-      <p>Anecdota mas Votada</p>
-      <p>{mayor[0].anecdota} <b>con votos</b> {mayor[0].votar}</p>
+    <div className="container d-flex justify-content-center alig-items-center">
+    <div class="card" style={{width:"18em"}}>
+      <div class="card-body">
+        <h2 className="card-title">Anecdota del Dia</h2>
+        <p className="card-text">{voto[selected].anecdota}</p>
+        <h6 className="card-subtitle mb-2 text-muted">has {voto[selected].votar}</h6>
+        <button className="btn btn-danger" onClick={votacion}>Votar</button>
+        <button className="btn btn-primary" onClick={aleatoria}>Siguiente</button>
+        <h1 className="card-title">Anecdota mas Votada</h1>
+        <p className="card-text">{mayor[0].anecdota} <b>con votos</b> {mayor[0].votar}</p>
+      </div>
+    </div>
     </div>
   )
 }
